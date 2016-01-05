@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Profile</h1>
+    <div class="row">
+        <form name="profile.form" ng-submit="profile.submit()" novalidate>
+            <formly-form model="profile.user" fields="profile.fields">
+            </formly-form>
+            <div class="row">
+                <button type="submit" class="btn btn-default">Save</button>
+                <button type="submit" class="btn btn-default" ng-click="profile.deleteUser()">Delete user</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <p>Role: {{profile.user.role}}</p>
+    </div>
+</div>
+<script type="text/ng-template" id="custom.html">
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="{{::id}}">{{options.templateOptions.label}}</label>
+            <input id="{{::id}}" name="{{::id}}" class="form-control" ng-model="model[options.key]" />
+        </div>
+    </div>
+</script>

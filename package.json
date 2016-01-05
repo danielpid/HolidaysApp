@@ -1,0 +1,47 @@
+{
+	"name": "mean_template",
+	"version": "1.0.0",
+	"description": "MEANjs App boilerplate",
+	"keywords": [
+        "mean",
+        "meanjs",
+        "template"
+    ],
+	"author": "Academia Binaria",
+	"contributors": [
+		{
+			"name": "Alberto Basalo",
+			"email": "albertobasalo@agorabinaria.com"
+        },
+		{
+			"name": "Mario Cordovilla",
+			"email": "mariocordovilla@agorabinaria.com"
+        },
+		{
+			"name": "Antonio Fernández",
+			"email": "antoniofgarcia@agorabinaria.com"
+        }
+    ],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AcademiaBinaria/mean_template.git"
+	},
+	"license": "ISC",
+	"scripts": {
+		"mongo": "/Users/alberto/mongo/bin/mongod --dbpath /Users/alberto/mongo/data --fork --logpath /dev/null",
+		"dev": "npm install && cd src/client && npm install && cd ../server && npm install && nodemon mean_template.js ",
+		"pro": "npm install && cd src/client && npm install && gulp build-dist && cd dist/server && npm install --production && node mean_template.js"
+	},
+	"main": "src/server/mean_template.js",
+	"devDependencies": {
+		"nodemon": "^1.4.0",
+		"del": "^1.2.0",
+		"gulp": "^3.9.0",
+		"gulp-if": "^1.2.5",
+		"gulp-minify-html": "^1.0.4",
+		"gulp-ng-annotate": "^1.1.0",
+		"gulp-run": "^1.6.10",
+		"gulp-uglify": "^1.2.0",
+		"gulp-useref": "^1.2.0"
+	}
+}

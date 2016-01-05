@@ -1,0 +1,19 @@
+<h2>{{ movimientos.title }}</h2>
+<p>Mantenimiento de movimientos...</p>
+
+
+<div class="container row">
+    <form
+       novalidate>
+        <formly-form
+            model="movimientos.movimiento"
+            fields="movimientos.fields">
+        </formly-form>
+        <div class="row">
+            <button class="btn btn-default"
+            ng-click="movimientos.guardarMovimiento()" >Guardar Movimiento</button>
+        </div>
+    </form>
+</div>
+
+<pre>{{movimientos.movimientos | json}}</pre>

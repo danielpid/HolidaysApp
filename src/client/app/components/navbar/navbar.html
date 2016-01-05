@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="navbar-inner">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li ng-class="{ active: navbar.isActive('dashboard') }">
+					<a ui-sref="dashboard">Dashboard</a>
+				</li>
+				<li ng-if="isLogged" ng-class="{active: navbar.isActive('transactions')}">
+					<a ui-sref="transactions">Transactions</a>
+				</li>
+				<li ng-if="isLogged" ng-class="{active: navbar.isActive('holidays')}">
+					<a ui-sref="holidays">Holidays</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-if="!isLogged" ng-class="{ active: navbar.isActive('login') }">
+					<a ui-sref="login">Login</a>
+				</li>
+				<li ng-if="!isLogged" ng-class="{ active: navbar.isActive('register')}">
+					<a ui-sref="register">Register</a>
+				</li>
+
+				<li ng-if="isLogged" class="pull-right" ng-class="{active: navbar.isActive('profile')}">
+					<a ui-sref="profile">Profile</a>
+				</li>
+				<li ng-if="isLogged" class="pull-right">
+					<a href="#" ng-click="navbar.logout()">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

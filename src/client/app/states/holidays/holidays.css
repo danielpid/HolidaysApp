@@ -1,0 +1,29 @@
+.holidaysDisplay .btn.disabled, .holidaysDisplay .btn[disabled], .holidaysDisplay fieldset[disabled] .btn {
+    cursor: default;
+}
+
+.holidaysDisplay th button.btn.pull-left, .holidaysDisplay th button.btn.pull-right {
+    display: none;
+}
+
+.holidaysDisplay .text-muted {
+    color: white;
+}
+
+.btn-info[disabled].active, .btn-info[disabled].active:hover {
+    background-color: #ffffff;
+    border-color: transparent;
+}
+.btn-info.active, .btn-info.active:hover {
+    color: #444444;
+}
+
+.festivo .btn-default, .festivo .btn-default:hover {
+    background-color: red !important;
+    border-radius: 0px !important;
+}
+
+.festivo button span {
+    color: white !important;
+}
+

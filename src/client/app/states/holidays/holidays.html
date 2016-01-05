@@ -1,0 +1,53 @@
+<div class="container-fluid well">
+    <div class="col-md-1">
+        <label for="province">Provincia: </label>
+    </div>
+    <div class="col-md-2">
+        <input id="province" type="text" ng-model="holidays.province.name" class="col-xs-12 input-sm" disabled>
+    </div>
+    <div class="col-md-2">
+        <label for="dias">Días de vacaciones: </label>
+    </div>
+    <div class="col-md-1">
+        <input id="dias" type="number" ng-model="holidays.days" class="col-xs-12 input-sm">
+    </div>
+</div>
+<div class="container-fluid well">
+    <div class="col-md-2">
+        <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{holidays.format}}" ng-model="holidays.dateFrom"
+                   is-open="holidays.status1.opened" min-date="holidays.minDate" max-date="holidays.maxDate"
+                   datepicker-options="holidays.dateOptions" date-disabled="holidays.disabled(date, mode)"
+                   ng-required="true" close-text="Close" show-weeks="false" disabled/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="holidays.open($event, holidays.status1)">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+        </p>
+    </div>
+    <div class="col-md-2">
+        <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{holidays.format}}" ng-model="holidays.dateTo"
+                   is-open="holidays.status2.opened" min-date="holidays.minDate" max-date="holidays.maxDate"
+                   datepicker-options="holidays.dateOptions" date-disabled="holidays.disabled(date, mode)"
+                   ng-required="true" close-text="Close" show-weeks="false" disabled/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="holidays.open($event, holidays.status2)">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+              </span>
+        </p>
+    </div>
+    <div class="col-md-1">
+        <button type="button" ng-click="holidays.saveHolidays()" class="btn btn-sm btn-success" style="margin-top: 5px">Save</button>
+    </div>
+</div>
+<div class="row holidaysDisplay">
+    <div ng-repeat="cal in holidays.dt track by $index">
+        <div class="form-group col-md-3">
+            <uib-datepicker ng-model="cal" show-weeks="false" starting-day="1" max-mode="day" date-disabled="true"
+                            custom-class="holidays.getDayClass(date, mode, $index)"></uib-datepicker>
+        </div>
+    </div>
+</div>
