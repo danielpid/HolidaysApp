@@ -62,9 +62,6 @@
         this.updatingUser = function (user) {
             user.$update();
         }
-        this.saveHolidays = function (dates) {
-            // TODO
-        }
         /** ask delete the user object at the server */
         this.deletingUser = function (user) {
             user.$delete()

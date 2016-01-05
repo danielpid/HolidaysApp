@@ -6,7 +6,8 @@
 var dependencies = ['security','url','components','states']
 	/** common values to be used across the application */
 var settings = {
-	urlBase: 'http://localhost:3030'
+	urlBase: 'http://localhost:3030',
+	currentYear : 2016
 };
 angular
 	.module('template', dependencies)

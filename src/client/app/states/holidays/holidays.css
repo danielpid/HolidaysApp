@@ -23,7 +23,12 @@
     border-radius: 0px !important;
 }
 
-.festivo button span {
+.vacaciones .btn-default, .vacaciones .btn-default:hover {
+    background-color: green !important;
+    border-radius: 0px !important;
+}
+.festivo button span, .vacaciones button span {
     color: white !important;
 }
+
 
