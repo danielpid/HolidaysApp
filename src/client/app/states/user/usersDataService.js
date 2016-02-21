@@ -35,38 +35,11 @@
             session.email = email;
             session.password = password;
             return session;
-        }
-        /** saves a new user posting it to the server, is a register operation */
-        this.postingUser = function (user) {
-            return user.$save()
-                .then(function (response) {
-                    return saveToken(response);
-                }, function (reason) {
-                    return $q.reject(reason);
-                });
-        }
-        /** saves a new session posting it to the server, is a login operation*/
+        }/** saves a new session posting it to the server, is a login operation*/
         this.postingSession = function (session) {
             return session.$save()
                 .then(function (response) {
                     return saveToken(response);
-                }, function (reason) {
-                    return $q.reject(reason);
-                });
-        }
-        /** asks to get the user object from the server */
-        this.gettingUser = function () {
-            return User.get().$promise;
-        }
-        /** ask to update the user object at the server */
-        this.updatingUser = function (user) {
-            user.$update();
-        }
-        /** ask delete the user object at the server */
-        this.deletingUser = function (user) {
-            user.$delete()
-                .then(function (response) {
-                    return deleteToken();
                 }, function (reason) {
                     return $q.reject(reason);
                 });
@@ -82,6 +55,34 @@
             delete $localStorage['xAccessToken'];
             $rootScope.isLogged = false;
             return response;
+        }
+        /** asks to get the user object from the server */
+        this.gettingUser = function () {
+            return User.get().$promise;
+        }
+        /** saves a new user posting it to the server, is a register operation */
+        this.postingUser = function (user) {
+            return user.$save()
+                .then(function (response) {
+                    return saveToken(response);
+                }, function (reason) {
+                    return $q.reject(reason);
+                });
+        }
+        /** ask to update the user object at the server */
+        this.updatingUser = function (user) {
+            return user.$update().then(function(response) {
+                return response.$promise;
+            });
+        }
+        /** ask delete the user object at the server */
+        this.deletingUser = function (user) {
+            user.$delete()
+                .then(function (response) {
+                    return deleteToken();
+                }, function (reason) {
+                    return $q.reject(reason);
+                });
         }
     }
 
