@@ -1,6 +1,6 @@
 "use strict";
 (function () {
-	/** component state to show a dasboard  */
+	/** component state to show a dashboard  */
 	var stateName = "dashboard";
 	angular
 		.module(stateName, ['ui.router'])

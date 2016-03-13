@@ -78,6 +78,7 @@
          * Inserta en al array dt una fecha del día 1 de cada uno de los 12 meses
          */
         vm.initCurrentYear = function() {
+            usSpinnerService.spin('spinner-1');
             vm.dt = [];
             for (var i = 1; i <= 12; i++) {
                 vm.dt.push(new Date(i + "/1/" + settings.currentYear));

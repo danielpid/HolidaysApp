@@ -13,7 +13,11 @@
         this.getting = function(id) {
             return Resource.get({
                 id : id
-            });
+            }).$promise;
+        }
+
+        this.gettingAll = function() {
+            return Resource.query().$promise;
         }
     }
 })();

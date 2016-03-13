@@ -24,7 +24,7 @@
         };
         function responseErrorInterceptor(response) {
             /** on each response chek for security error codes */
-            if (response.status === 401) {
+            if (response.status === 401 || response.status === 403) {
                 /** if no authentication send user to login state */
                 $injector.get('$state').go('login');
             }
